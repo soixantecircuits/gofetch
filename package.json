@@ -1,0 +1,35 @@
+{
+  "name": "fetch-images",
+  "version": "1.0.0",
+  "description": "A Command Line Interface to automatically download images from Flickr Edit",
+  "main": "index.js",
+  "bin": {
+    "fetch-images": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soixantecircuits/fetch-images.git"
+  },
+  "keywords": [
+    "fetch",
+    "images",
+    "flickr",
+    "automatic",
+    "download"
+  ],
+  "author": "Soixante circuits",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soixantecircuits/fetch-images/issues"
+  },
+  "homepage": "https://github.com/soixantecircuits/fetch-images#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "request": "^2.79.0",
+    "vorpal": "^1.11.4"
+  }
+}
