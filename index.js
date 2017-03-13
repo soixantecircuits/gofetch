@@ -4,9 +4,12 @@
 
 const vorpal = require('vorpal')()
 const request = require('request')
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
+const mkdirp = require('mkdirp')
 
+var tempDir = '/tmp'
+mkdirp(tempDir)
 var id
 
 vorpal
@@ -23,13 +26,24 @@ vorpal
     if (interval < 1) { interval = 1 }
 
     id = setInterval(() => {
-      var stream = fs.createWriteStream(path.join(args.destination, keyword + '_' + Date.now() + '.jpg'))
+      
+      let filename = keyword + '_' + Date.now() + '.jpg'
+      let finalDestinationPath = path.join(args.destination, filename)
+      let tempDestinationPath = path.join(tempDir, filename)
+      var stream = fs.createWriteStream(tempDestinationPath)
       stream.on('error', err => {
         this.log('Error:', err)
         return callback()
       })
+      .on('finish', () => {
+        fs.move(tempDestinationPath, finalDestinationPath, (err) => {
+          if (err) {
+            console.log(err)
+          }
+        })
+      })
       request('http://loremflickr.com/' + width + '/' + height + '/' + keyword).pipe(stream)
-      this.log('Downloaded', stream.path)
+      this.log('Downloading ', stream.path)
     }, interval * 1000)
   })
   .cancel(function () {

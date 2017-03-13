@@ -28,6 +28,8 @@
   "homepage": "https://github.com/soixantecircuits/fetch-images#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "fs-extra": "^2.0.0",
+    "mkdirp": "^0.5.1",
     "path": "^0.12.7",
     "request": "^2.79.0",
     "vorpal": "^1.11.4"
