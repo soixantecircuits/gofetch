@@ -1,7 +1,7 @@
 {
   "name": "gofetch",
   "version": "0.0.1",
-  "description": "A Command Line Interface to automatically download images from Flickr Edit",
+  "description": "A Command Line Interface to automatically download images, gif or video.",
   "main": "index.js",
   "bin": {
     "gofetch": "./index.js"
@@ -24,6 +24,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/soixantecircuits/gofetch/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "homepage": "https://github.com/soixantecircuits/gofetch#readme",
   "dependencies": {

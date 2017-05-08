@@ -7,6 +7,10 @@ You can let it run and feed a database with this images.
 
 This is mainly a devtool that should go on your Tool Belt.
 
+- [x] fetch images
+- [ ] fetch gif
+- [ ] fetch video
+
 ## 🌍 Installation
 
 `npm install -g gofetch`
