@@ -1,6 +1,6 @@
 {
   "name": "gofetch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Command Line Interface to automatically download images, gif or video.",
   "main": "index.js",
   "bin": {
