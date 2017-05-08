@@ -1,0 +1,9 @@
+{
+  "tmpDir": "/tmp",
+  "destinationPath": "/tmp/fetch-image",
+  "image":{
+    "width":320,
+    "height":240
+  },
+  "keyword":"kitten"
+}
