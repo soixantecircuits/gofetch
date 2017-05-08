@@ -1,33 +1,36 @@
-# fetch Images
+# Gofetch
 
-A script for fetching images from flickr and giphy. Dog food your hard drive in few types.
+Dog food your hard drive in few types.
+Fetch images periodically from flickr and giphy.
+
+You can let it run and feed a database with this images.
 
 This is mainly a devtool that should go on your Tool Belt.
 
 ## 🌍 Installation
 
-`npm install -g fetch-images`
+`npm install -g gofetch`
 
 ## 👋 Usage
 
-`$ fetch-images`
+`$ gofetch`
 
-### Fetching kitten every second and save them to tmp:
+### 🐈 Fetch kitten every second and save them to tmp:
 
-`$fetch-images fetch kitten`
+`$gofetch fetch kitten`
 
-### Fetching bananas every second and save them to tmp:
+### 🍌 Fetch bananas every second and save them to tmp:
 
-`$fetch-images fetch bananas`
+`$gofetch fetch bananas`
 
 ### Stoping bananas fetching:
 
-`$fetch-images fetch bananas`
+`$gofetch stop bananas`
 
 ### Getting help
 
 ```
-fetch-images$ help
+gofetch$ help
 
   Commands:
 
