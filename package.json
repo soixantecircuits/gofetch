@@ -1,17 +1,17 @@
 {
-  "name": "fetch-images",
-  "version": "1.0.0",
-  "description": "A Command Line Interface to automatically download images from Flickr Edit",
+  "name": "gofetch",
+  "version": "0.0.2",
+  "description": "A Command Line Interface to automatically download images, gif or video.",
   "main": "index.js",
   "bin": {
-    "fetch-images": "./index.js"
+    "gofetch": "./index.js"
   },
   "scripts": {
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soixantecircuits/fetch-images.git"
+    "url": "git+https://github.com/soixantecircuits/gofetch.git"
   },
   "keywords": [
     "fetch",
@@ -23,15 +23,17 @@
   "author": "Soixante circuits",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/soixantecircuits/fetch-images/issues"
+    "url": "https://github.com/soixantecircuits/gofetch/issues"
   },
-  "homepage": "https://github.com/soixantecircuits/fetch-images#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "homepage": "https://github.com/soixantecircuits/gofetch#readme",
   "dependencies": {
-    "fs": "0.0.1-security",
     "fs-extra": "^2.0.0",
     "mkdirp": "^0.5.1",
-    "path": "^0.12.7",
     "request": "^2.79.0",
+    "standard-settings": "^1.1.6",
     "vorpal": "^1.11.4"
   }
 }
