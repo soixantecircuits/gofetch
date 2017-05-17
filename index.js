@@ -72,13 +72,32 @@ vorpal
     'You can provide a [keyword] to download media matching a specific subject. If not supplying any keyword, you will get media matching the keyword "kitten".\n' +
     'You can provide [width] and [height] to change the images size, default size is 320x240 (This only works for images).\n')
   .action(({ keyword, type, interval, width, height, destination}, callback) => {
+      if (!Number(width) && settings.image && Number(settings.image.width)) {
+        width = settings.image.width
+      } else if (!Number(width)) {
+        width = 320
+      }
+      if (!Number(height) && settings.image && Number(settings.image.height)) {
+        height = settings.image.height
+      } else if (!Number(height)) {
+        height = 240
+      }
+      if (!type && settings.image && settings.image.type) {
+        type = settings.image.type
+      } else if (!type) {
+        type = 'image'
+      }
+      keyword = keyword || settings.keyword || 'kitten'
+      interval = Number(interval) || minInterval
+      destination = destination || settings.destinationPath || '/tmp/gofetch'
+
     var options = {
-      width: width || settings.image.width || 320,
-      height: height || settings.image.height || 240,
-      keyword: keyword || settings.keyword || 'kitten',
-      interval: Number(interval) || minInterval,
-      type: type || settings.image.type || 'image',
-      destinationPath: destination || settings.destinationPath || '/tmp/gofetch'
+      width,
+      height,
+      type,
+      keyword,
+      interval,
+      destinationPath: destination
     }
     mkdirp(options.destinationPath)
 
@@ -90,7 +109,7 @@ vorpal
       intervals[`${options.keyword}`] = setInterval(() => {
         fetchFunctions[options.type](options)
       }, options.interval * 1000)
-      vorpal.log(`Started downloading ${options.keyword} ${options.type}`)
+      vorpal.log(`Started downloading ${options.keyword} ${options.type}s to ${options.destinationPath}`)
     }
     return callback()
   })
