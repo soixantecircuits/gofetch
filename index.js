@@ -119,6 +119,7 @@ vorpal
   .action(({fetchName}, callback) => {
     if (intervals[fetchName]) {
       clearInterval(intervals[fetchName])
+      delete intervals[fetchName]
       vorpal.log(`Stop fetch: ${fetchName}`)
     } else {
       vorpal.log(`${fetchName} unknown.`)
