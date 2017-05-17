@@ -1,6 +1,6 @@
 {
   "tmpDir": "/tmp",
-  "destinationPath": "/tmp/fetch-image",
+  "destinationPath": "/tmp/gofetch",
   "verbose": false,
   "image":{
     "width":320,

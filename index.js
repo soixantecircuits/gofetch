@@ -13,7 +13,7 @@ const logUpdate = require('log-update')
 const settings = standardSettings.getSettings()
 
 var minInterval = 1
-var tempDir = settings.tmpDir
+var tempDir = settings.tmpDir || '/tmp'
 mkdirp(tempDir)
 var id
 let intervals = []
@@ -73,12 +73,12 @@ vorpal
     'You can provide [width] and [height] to change the images size, default size is 320x240 (This only works for images).\n')
   .action(({ keyword, type, interval, width, height, destination}, callback) => {
     var options = {
-      width: width || settings.image.width,
-      height: height || settings.image.height,
-      keyword: keyword || settings.keyword,
+      width: width || settings.image.width || 320,
+      height: height || settings.image.height || 240,
+      keyword: keyword || settings.keyword || 'kitten',
       interval: Number(interval) || minInterval,
       type: type || settings.image.type || 'image',
-      destinationPath: destination || settings.destinationPath
+      destinationPath: destination || settings.destinationPath || '/tmp/gofetch'
     }
     mkdirp(options.destinationPath)
 
