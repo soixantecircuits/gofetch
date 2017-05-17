@@ -1,11 +1,12 @@
 {
   "tmpDir": "/tmp",
   "destinationPath": "/tmp/gofetch",
+  "keyword":"kitten",
+  "interval": 1,
   "verbose": false,
   "image":{
     "width":320,
     "height":240,
     "type": "image"
-  },
-  "keyword":"kitten"
+  }
 }

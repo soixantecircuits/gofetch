@@ -89,7 +89,7 @@ vorpal
       type = 'image'
     }
     keyword = keyword || settings.keyword || 'kitten'
-    interval = Number(interval) || minInterval
+    interval = Number(interval) || Number(settings.interval) || minInterval
     destination = destination || settings.destinationPath || '/tmp/gofetch'
 
     var options = {
